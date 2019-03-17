@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CALL_PHONE}, 1);
             Log.w("tag", "开始授权");
         } else {
-            Toast.makeText(this, "你已经申请了权限", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "你已经申请了打电话权限", Toast.LENGTH_LONG).show();
             Log.w("tag", "你已经申请了权限");
             callPhone();
 
