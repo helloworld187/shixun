@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ShiXun</string>
+    <string name="screen">屏幕大小</string>
+    <string name="system">系统版本</string>
+    <string name="sharedpre">背景颜色</string>
+
+</resources>
+
