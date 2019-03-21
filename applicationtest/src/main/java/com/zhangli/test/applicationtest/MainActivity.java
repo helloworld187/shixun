@@ -52,8 +52,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Toast.makeText(this, "teleString不能为空", Toast.LENGTH_SHORT).show();
             return;
         }
+        callPhone();
         // TODO validate success, do something
-        checkPermission();
+        //checkPermission();
     }
 
     public void checkPermission() {
