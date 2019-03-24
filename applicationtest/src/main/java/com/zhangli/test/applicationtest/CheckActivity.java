@@ -21,7 +21,8 @@ public class CheckActivity extends AppCompatActivity {
     //1、首先声明一个数组permissions，将需要的权限都放在里面
     private String[] permission = new String[]{
             Manifest.permission.CALL_PHONE,
-            Manifest.permission.READ_CONTACTS
+            Manifest.permission.READ_CONTACTS,
+            Manifest.permission.READ_SMS
     };
     //2、创建一个mPermissionList，逐个判断哪些权限未授予，未授予的权限存储到mPerrrmissionList中
     public List<String> mPermissionList = new ArrayList<>();
