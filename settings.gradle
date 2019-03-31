@@ -1,1 +1,1 @@
-include ':app', ':applicationtest', ':startapp', ':screenapplication', ':testapplication'
+include ':app', ':applicationtest', ':startapp', ':screenapplication', ':testapplication', ':material_design_application'
