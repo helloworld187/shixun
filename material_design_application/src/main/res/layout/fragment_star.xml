@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FFCC22">
+    android:background="@drawable/star">
     <TextView
         android:id="@+id/fragment_star"
         android:layout_width="wrap_content"
@@ -12,7 +12,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="80dp"
         android:textSize="40dp"
-        android:textColor="#fff"
+        android:textColor="#f49829"
         android:text="欢迎来到动态页面"/>
 
 </LinearLayout>

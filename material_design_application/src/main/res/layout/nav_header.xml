@@ -2,32 +2,78 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="150dp"
     android:orientation="vertical"
-    android:background="@drawable/ic_launcher_background">
+    android:background="@drawable/back">
 
-    <de.hdodenhof.circleimageview.CircleImageView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp">
+
+    <ImageView
         android:id="@+id/icon_image"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginLeft="20dp"
-        android:src="@drawable/ic_avator"
-        android:layout_centerInParent="true"/>
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@drawable/ic_social_qq"
+        android:layout_centerInParent="true"
+        android:scaleType="centerInside"
+        android:layout_gravity="center"
+        android:background="@drawable/circle"/>
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:text="风轻扬"
+            android:textColor="#fff"
+            android:textSize="15dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:src="@drawable/vip6"
+            android:layout_gravity="center"/>
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_sun"
+            android:layout_gravity="center"/>
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_sun"
+            android:layout_gravity="center"/>
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_moon"
+            android:layout_gravity="center"/>
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_stars"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+
     <TextView
         android:id="@+id/mail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:text="870629252@qq.com"
+        android:text="夏虫不于语冰，井蛙不可语于海"
         android:textColor="#fff"
         android:textSize="15dp"/>
-    <TextView
-        android:id="@+id/username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:text="tony"
-        android:textColor="#fff"
-        android:textSize="15dp"/>
+
 
 </LinearLayout>
