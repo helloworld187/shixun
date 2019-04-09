@@ -3,13 +3,17 @@ package com.zhangli.test.material_design_application;
 import android.content.res.ColorStateList;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTabHost;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,10 +23,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.TabHost.TabSpec;
 
-import com.zhangli.test.material_design_application.Frament.FocusFragment;
-import com.zhangli.test.material_design_application.Frament.MessageFragment;
-import com.zhangli.test.material_design_application.Frament.PeopleFragment;
-import com.zhangli.test.material_design_application.Frament.StarFragment;
+import com.zhangli.test.material_design_application.Fragement.DressedFragment;
+import com.zhangli.test.material_design_application.Fragement.FocusFragment;
+import com.zhangli.test.material_design_application.Fragement.MemberFragment;
+import com.zhangli.test.material_design_application.Fragement.MessageFragment;
+import com.zhangli.test.material_design_application.Fragement.PeopleFragment;
+import com.zhangli.test.material_design_application.Fragement.StarFragment;
+import com.zhangli.test.material_design_application.Fragement.WalletFragment;
 
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
@@ -43,6 +50,11 @@ public class MainActivity extends AppCompatActivity {
     private String mTextviewArray[] = {"消息", "联系人", "看点","动态"};
 
     private ColorStateList colorStateList;
+
+
+
+    private Fragment showFragment;
+    private int preFragment = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +81,19 @@ public class MainActivity extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()){
+                    case R.id.member:
+                        showHomeFragement(R.id.member);
+                        break;
+                    case R.id.wallet:
+                        showHomeFragement(R.id.wallet);
+                        break;
+                    case R.id.decorate:
+                        showHomeFragement(R.id.decorate);
+                        break;
+                    default:
+                        break;
+                }
                 drawerLayout.closeDrawers();
                 return true;
             }
@@ -92,6 +117,47 @@ public class MainActivity extends AppCompatActivity {
             mTabHost.addTab(tabSpec, fragmentArray[i], null);
         }
     }
+
+
+    private void showHomeFragement(int id){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//        hideAllFragement(fragmentTransaction);
+        String tag = mTabHost.getCurrentTabTag();
+        Log.d("MainActivity", "showHomeFragement: "+tag);
+        if (mTextviewArray[0].equals(tag)) {
+            Fragment fragment = fragmentManager.findFragmentByTag(tag);
+            fragmentTransaction.hide(fragment);
+        }
+        Fragment prefragment = fragmentManager.findFragmentByTag(getTag(preFragment));
+        if (prefragment !=null ){
+            fragmentTransaction.hide(prefragment);
+        }
+        Fragment fragment = getFragment(id);
+        fragmentTransaction.add(R.id.content, fragment, getTag(id));
+        preFragment =  id;
+        fragmentTransaction.commitAllowingStateLoss();
+    }
+    private String getTag(int i) {
+        return "tag"+i;
+    }
+
+
+    private Fragment getFragment(int i) {
+        switch (i) {
+            case R.id.member:
+                showFragment = new MemberFragment();
+                break;
+            case R.id.wallet:
+                showFragment = new WalletFragment();
+                break;
+            case R.id.decorate:
+                showFragment = new DressedFragment();
+                break;
+        }
+        return showFragment;
+    }
+
     /**
      * 给Tab按钮设置图标和文字
      */

@@ -1,4 +1,4 @@
-package com.zhangli.test.material_design_application.Frament;
+package com.zhangli.test.material_design_application.Fragement;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
