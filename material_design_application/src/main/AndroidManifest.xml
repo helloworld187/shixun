@@ -18,6 +18,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".News_Details_Activity"
+            android:label="新闻详情">
+
+        </activity>
     </application>
 
 </manifest>
