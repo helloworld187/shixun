@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/mv_poster"
+            android:layout_width="140dp"
+            android:layout_height="198dp"
+            android:src="@drawable/fantanfengbao"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/mv_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="反贪风暴4 "
+                    android:textColor="#10B28C"
+                    android:textSize="20dp"
+                    android:layout_weight="1"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="end">
+                    <TextView
+                        android:id="@+id/mv_grade"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="6.3"
+                        android:gravity="center"
+                        android:textColor="#ffffff"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="13dp"
+                        android:paddingRight="13dp"
+                        android:background="@drawable/shape" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="4dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#10B28C"
+                    android:text="类型："/>
+                <TextView
+                    android:id="@+id/mv_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="动作 / 犯罪"
+                    android:textColor="#10B28C" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="4dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#10B28C"
+                android:text="导演：："/>
+            <TextView
+                android:id="@+id/mv_director"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="林德禄"
+                android:textColor="#10B28C"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="4dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#10B28C"
+                android:text="演员："/>
+            <TextView
+                    android:id="@+id/mv_casts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="古天乐、郑嘉颖、林峯"
+                    android:textColor="#10B28C"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="4dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#10B28C"
+                android:text="年份："/>
+            <TextView
+                android:id="@+id/mv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2019年"
+                android:textColor="#10B28C"/>
+        </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#c7cbc9"
+        />
+
+
+</LinearLayout>
