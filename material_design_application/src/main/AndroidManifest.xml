@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zhangli.test.material_design_application">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -10,18 +11,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
-                  android:label="主页">
+        <activity
+            android:name=".MainActivity"
+            android:label="主页">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".News_Details_Activity"
-            android:label="新闻详情">
-
-        </activity>
+        <activity
+            android:name=".News_Details_Activity"
+            android:label="新闻详情" />
+        <activity android:name=".WallPaper_Activity" />
+        <activity android:name=".Member_Activity" />
+        <activity android:name=".Decorate_Activity" />
+        <activity android:name=".MovieDetails_Activity" />
+        <activity android:name=".CategoryActivity"></activity>
     </application>
 
 </manifest>

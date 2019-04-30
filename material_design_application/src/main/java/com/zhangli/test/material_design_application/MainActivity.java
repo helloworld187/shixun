@@ -1,5 +1,6 @@
 package com.zhangli.test.material_design_application;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -56,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
     private Fragment showFragment;
     private int preFragment = 0;
 
+    public Intent intent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,13 +86,19 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()){
                     case R.id.member:
-                        showHomeFragement(R.id.member);
+//                        showHomeFragement(R.id.member);
+                        intent = new Intent(MainActivity.this,Member_Activity.class);
+                        startActivity(intent);
                         break;
                     case R.id.wallet:
-                        showHomeFragement(R.id.wallet);
+//                        showHomeFragement(R.id.wallet);
+                        intent= new Intent(MainActivity.this,CategoryActivity.class);
+                        startActivity(intent);
                         break;
                     case R.id.decorate:
-                        showHomeFragement(R.id.decorate);
+//                        showHomeFragement(R.id.decorate);
+                        intent = new Intent(MainActivity.this,Decorate_Activity.class);
+                        startActivity(intent);
                         break;
                     default:
                         break;

@@ -8,8 +8,9 @@ public class MoviesBean {
     public String movie_casts;
     public String movie_date;
     public String movie_poster;
+    public String movie_details;
 
-    public MoviesBean(String movie_name, String movie_grade, String movie_type,String movie_director, String movie_casts, String movie_date, String movie_poster) {
+    public MoviesBean(String movie_name, String movie_grade, String movie_type,String movie_director, String movie_casts, String movie_date, String movie_poster,String movie_details) {
         this.movie_name = movie_name;
         this.movie_grade = movie_grade;
         this.movie_type = movie_type;
@@ -17,6 +18,7 @@ public class MoviesBean {
         this.movie_casts = movie_casts;
         this.movie_date = movie_date;
         this.movie_poster = movie_poster;
+        this.movie_details = movie_details;
     }
 
     public String getMovie_name() {
@@ -75,6 +77,14 @@ public class MoviesBean {
         this.movie_poster = movie_poster;
     }
 
+    public String getMovie_details() {
+        return movie_details;
+    }
+
+    public void setMovie_details(String movie_details) {
+        this.movie_details = movie_details;
+    }
+
     @Override
     public String toString() {
         return "MoviesBean{" +
@@ -85,6 +95,7 @@ public class MoviesBean {
                 ", movie_casts='" + movie_casts + '\'' +
                 ", movie_date='" + movie_date + '\'' +
                 ", movie_poster='" + movie_poster + '\'' +
+                ", movie_details='" + movie_details + '\'' +
                 '}';
     }
 }

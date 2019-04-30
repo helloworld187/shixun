@@ -19,6 +19,24 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
     private List<MoviesBean> moviesBeanList;
     private Context context;
 
+    private OnItemClickListener onItemClickListener;
+    private OnItemLongClickListener onItemLongClickListener;
+
+    public interface OnItemClickListener {
+        void onItemClick(View v,int position);
+    }
+
+    public interface OnItemLongClickListener {
+        void onItemLongClick(View v,int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener){
+        onItemClickListener= listener;
+    }
+    public void setOnItemLongClickListener(OnItemLongClickListener listener){
+        onItemLongClickListener=listener;
+    }
+
     public MovieAdapter(List<MoviesBean> moviesList,Context mcontext){
         moviesBeanList = moviesList;
         context = mcontext;
@@ -49,7 +67,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull final ViewHolder viewHolder, int i) {
         MoviesBean movie = moviesBeanList.get(i);
         Glide.with(context).load(movie.getMovie_poster()).into(viewHolder.mv_poster);
         viewHolder.mv_name.setText(movie.getMovie_name());
@@ -58,6 +76,16 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
         viewHolder.mv_director.setText(movie.getMovie_director());
         viewHolder.mv_casts.setText(movie.getMovie_casts());
         viewHolder.mv_date.setText(movie.getMovie_date());
+        final int position = i;
+        if (onItemClickListener != null) {
+            viewHolder.mv_poster.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onItemClickListener.onItemClick(view, position);
+                }
+            });
+        }
+
     }
 
     @Override
