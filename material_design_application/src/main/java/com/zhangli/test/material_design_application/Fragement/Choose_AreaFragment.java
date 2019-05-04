@@ -1,6 +1,7 @@
 package com.zhangli.test.material_design_application.Fragement;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,9 +17,11 @@ import android.support.v4.app.Fragment;
 import com.zhangli.test.material_design_application.Bean.City;
 import com.zhangli.test.material_design_application.Bean.County;
 import com.zhangli.test.material_design_application.Bean.Province;
+import com.zhangli.test.material_design_application.MainActivity;
 import com.zhangli.test.material_design_application.R;
 import com.zhangli.test.material_design_application.Utils.HttpUtil;
 import com.zhangli.test.material_design_application.Utils.Utility;
+import com.zhangli.test.material_design_application.WeatherActivity;
 
 import org.litepal.crud.DataSupport;
 
@@ -109,6 +112,14 @@ public class Choose_AreaFragment extends Fragment {
                 } else if (currentLevel == LEVEL_CITY) {
                     selectedCity = cityList.get(position);
                     queryCounties();
+                }else if(currentLevel == LEVEL_COUNTY){
+                    String weatherId = countyList.get(position).getWeatherId();
+                    if (getActivity() instanceof MainActivity) {
+                        Intent intent = new Intent(getActivity(), WeatherActivity.class);
+                        intent.putExtra("weather_id", weatherId);
+                        startActivity(intent);
+                        getActivity().finish();
+                    }
                 }
             }
         });
