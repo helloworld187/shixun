@@ -12,11 +12,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 import com.zhangli.test.material_design_application.Adapter.MovieAdapter;
 import com.zhangli.test.material_design_application.Bean.MoviesBean;
-import com.zhangli.test.material_design_application.Bean.NewsBean;
 import com.zhangli.test.material_design_application.MovieDetails_Activity;
 import com.zhangli.test.material_design_application.R;
 

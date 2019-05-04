@@ -2,7 +2,7 @@ package com.zhangli.test.material_design_application.Bean;
 
 import org.litepal.crud.DataSupport;
 
-public class ProvinceBean extends DataSupport{
+public class Province extends DataSupport{
 
         private int id;
 

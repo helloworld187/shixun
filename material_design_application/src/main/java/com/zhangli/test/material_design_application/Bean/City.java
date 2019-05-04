@@ -2,7 +2,7 @@ package com.zhangli.test.material_design_application.Bean;
 
 import org.litepal.crud.DataSupport;
 
-public class CityBean extends DataSupport{
+public class City extends DataSupport{
 
         private int id;
 

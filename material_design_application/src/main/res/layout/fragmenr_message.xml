@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/message">
-    <TextView
-        android:id="@+id/fragment_message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="80dp"
-        android:textSize="40dp"
-        android:textColor="#f49829"
-        android:text="欢迎来到消息页面"/>
-
-</LinearLayout>
+    android:layout_width="match_parent" >
+    <fragment
+        android:id="@+id/choose_area_fragment"
+        android:name="com.zhangli.test.material_design_application.Fragement.Choose_AreaFragment"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"  />
+</FrameLayout>

@@ -14,8 +14,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_logo" />
-                            <entry key="sourceFile" value="E:\课程作业\svg图标库\logo.svg" />
+                            <entry key="outputName" value="ic_back" />
+                            <entry key="sourceFile" value="E:\课程作业\svg图标库\back.svg" />
                           </map>
                         </option>
                       </PersistentState>

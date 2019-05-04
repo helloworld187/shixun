@@ -1,0 +1,9 @@
+<litepal>
+    <dbname value="cool_weather"/>
+    <version value="1"/>
+    <list>com.zhangli.test.material_design_application.Bean
+        <mapping class="com.zhangli.test.material_design_application.Bean.Province"/>
+        <mapping class="com.zhangli.test.material_design_application.Bean.City"/>
+        <mapping class="com.zhangli.test.material_design_application.Bean.County"/>
+    </list>
+</litepal>
