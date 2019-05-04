@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">Material_Design_Application</string>
+    <string name="app_name">实训</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">我的装扮</string>
+    <string name="hello_blank_fragment">我的壁纸</string>
 </resources>
