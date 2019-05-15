@@ -4,14 +4,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/g2">
+    android:background="@drawable/guide2">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="80dp"
-        android:textSize="25dp"
-        android:text="九层之塔，起于垒土"/>
+        android:textSize="35dp"
+        android:text="QQ音乐"
+        android:textColor="#8306bd"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:layout_marginTop="5dp"
+        android:text="听你想听的音乐"
+        android:textColor="#8306bd"/>
 
 </LinearLayout>

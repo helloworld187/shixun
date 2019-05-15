@@ -7,7 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.zhangli.test.material_design_application.Adapter.WallPaperAdapter;
 import com.zhangli.test.material_design_application.Bean.WallPaperBean;
@@ -27,6 +31,7 @@ public class WallPaper_Activity extends AppCompatActivity {
     private List<WallPaperBean> wallPaperBeanList = new ArrayList<>();
     private RecyclerView recyclerView;
     private String Tag ="WallPaper_Activity";
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +44,12 @@ public class WallPaper_Activity extends AppCompatActivity {
 
 
     private void initView(List<WallPaperBean> wallPaperBeans) {
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_back2);
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+
+
         Log.d(Tag,"数据信息"+wallPaperBeans);
         recyclerView = (RecyclerView) findViewById(R.id.rv_wallPaper);
 //        GridLayoutManager layoutManager = new GridLayoutManager(this, 3);
@@ -47,6 +58,28 @@ public class WallPaper_Activity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         WallPaperAdapter wallPaperAdapter = new WallPaperAdapter(wallPaperBeans,this);
         recyclerView.setAdapter(wallPaperAdapter);
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.add, menu);
+        return true;
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                Intent intent = new Intent(WallPaper_Activity.this, CategoryActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.add:
+                Toast.makeText(this, "more", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private  void sendRequestWithOkHttp(final String url){

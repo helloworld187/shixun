@@ -5,8 +5,10 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.TextView;
 
 import com.zhangli.test.material_design_application.Adapter.ViewPagerAdapter;
 import com.zhangli.test.material_design_application.Utils.ScreenUtils;
@@ -18,7 +20,7 @@ public class GuideActivity extends AppCompatActivity {
 
     private ViewPager viewPager;
     private List<View> mList= new ArrayList<>();
-    private  View viewOne,viewTwo,viewThree;
+    private  View viewOne,viewTwo,viewThree,viewFour;
     private int currentPage;
     private int startX;
     private int endX;
@@ -39,9 +41,26 @@ public class GuideActivity extends AppCompatActivity {
         viewOne = View.inflate(this,R.layout.guide,null);
         viewTwo = View.inflate(this,R.layout.guide2,null);
         viewThree = View.inflate(this,R.layout.guide3,null);
+        viewFour = View.inflate(this,R.layout.guide4,null);
+        TextView tv = (TextView) viewFour.findViewById(R.id.mv_grade);
+        tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(GuideActivity.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
+        viewFour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(GuideActivity.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
         mList.add(viewOne);
         mList.add(viewTwo);
         mList.add(viewThree);
+        mList.add(viewFour);
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(mList);
         viewPager.setAdapter(viewPagerAdapter);
 

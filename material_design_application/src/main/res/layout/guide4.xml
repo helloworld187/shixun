@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/guide5">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="80dp"
+        android:textSize="35dp"
+        android:text="完美影片"
+        android:textColor="#facf41"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:layout_marginTop="5dp"
+        android:text="高清海报，独家电影任你选"
+        android:textColor="#facf41"/>
+    <TextView
+        android:id="@+id/mv_grade"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:text="立即体验"
+        android:textSize="15dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textColor="#ffffff"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:layout_marginTop="400dp"
+        android:background="@drawable/shape2" />
+
+</LinearLayout>

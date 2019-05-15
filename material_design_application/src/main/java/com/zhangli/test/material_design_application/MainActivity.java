@@ -1,9 +1,7 @@
 package com.zhangli.test.material_design_application;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
-import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -60,32 +58,49 @@ public class MainActivity extends AppCompatActivity {
     private int preFragment = 0;
 
     public Intent intent;
+    private ImageView avator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        if(prefs.getString("weather",null) != null){
-            Intent intent = new Intent(this,WeatherActivity.class);
-            startActivity(intent);
-            finish();
-        }
+//        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+//        if(prefs.getString("weather",null) != null){
+//            Intent intent = new Intent(this,WeatherActivity.class);
+//            startActivity(intent);
+//            finish();
+//        }
 
 
 
     }
     private void initView(){
+        avator = (ImageView) findViewById(R.id.icon_image);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("");
         setSupportActionBar(toolbar);
+
+        avator.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(v.getId() == R.id.icon_image){
+                    drawerLayout.openDrawer(GravityCompat.START);
+
+                }
+            }
+        });
+
+//        toolbar.setNavigationIcon(R.drawable.ic_social_qq);
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         NavigationView navigationView = (NavigationView)findViewById(R.id.nav_view);
         ActionBar actionBar = getSupportActionBar();
+
         if(actionBar != null){
-            actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setHomeAsUpIndicator(R.drawable.menu);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+//            actionBar.setDisplayHomeAsUpEnabled(true);
+//            actionBar.setHomeAsUpIndicator(R.drawable.menu);
 
         }
         navigationView.setCheckedItem(R.id.member);
@@ -105,6 +120,14 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.decorate:
 //                        showHomeFragement(R.id.decorate);
+                        intent = new Intent(MainActivity.this,AppActivity.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.collection:
+                        intent = new Intent(MainActivity.this,SystemActivity.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.photos:
                         intent = new Intent(MainActivity.this,Decorate_Activity.class);
                         startActivity(intent);
                         break;

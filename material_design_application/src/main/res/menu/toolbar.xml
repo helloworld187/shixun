@@ -18,7 +18,7 @@
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/setting"
-        android:icon="@drawable/more"
+        android:icon="@drawable/adding"
         android:title="more"
         app:showAsAction="never"/>
 

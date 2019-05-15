@@ -4,14 +4,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/g1">
+    android:background="@drawable/guide4">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="80dp"
-        android:textSize="25dp"
-        android:text="合抱之树，生于毫末"/>
+        android:textSize="35dp"
+            android:text="天气信息"
+        android:textColor="#7b7b7b"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:layout_marginTop="5dp"
+        android:text="突发天气变化早知道"
+        android:textColor="#7b7b7b"/>
 
 </LinearLayout>

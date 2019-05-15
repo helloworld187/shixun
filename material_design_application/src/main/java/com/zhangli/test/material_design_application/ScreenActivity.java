@@ -19,7 +19,8 @@ public class ScreenActivity extends AppCompatActivity {
     private String[] permissions = new String[]{
             Manifest.permission.CALL_PHONE,
             Manifest.permission.READ_CONTACTS,
-            Manifest.permission.READ_SMS};
+            Manifest.permission.READ_SMS,
+            Manifest.permission.READ_PHONE_STATE};
     private Message msg = new Message();
     String TAG = "测试值----";
 
@@ -28,6 +29,7 @@ public class ScreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_screen);
+
         checkVersion();
     }
     private void checkVersion(){

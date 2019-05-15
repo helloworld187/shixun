@@ -3,9 +3,12 @@ package com.zhangli.test.material_design_application;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.Toast;
 
 public class CategoryActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -17,6 +20,7 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
     private ImageView catrgory_gaoxiao;
     private ImageView category_sheying;
     private ImageView category_sheji;
+    private Toolbar toolbar;
 
     public Intent intent;
 
@@ -36,6 +40,7 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
         catrgory_gaoxiao = (ImageView) findViewById(R.id.catrgory_gaoxiao);
         category_sheying = (ImageView) findViewById(R.id.category_sheying);
         category_sheji = (ImageView) findViewById(R.id.category_sheji);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         category_star.setOnClickListener(this);
         catrgory_beauty.setOnClickListener(this);
         category_pet.setOnClickListener(this);
@@ -44,6 +49,38 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
         catrgory_gaoxiao.setOnClickListener(this);
         category_sheying.setOnClickListener(this);
         category_sheji.setOnClickListener(this);
+
+
+
+
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+//        getSupportActionBar().setHomeButtonEnabled(true);
+        toolbar.setNavigationIcon(R.drawable.ic_back2);
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.add_grey, menu);
+        return true;
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()){
+            case android.R.id.home:
+                Intent intent = new Intent(CategoryActivity.this,MainActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.add_grey:
+                Toast.makeText(this,"more",Toast.LENGTH_SHORT).show();
+                break;
+
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
