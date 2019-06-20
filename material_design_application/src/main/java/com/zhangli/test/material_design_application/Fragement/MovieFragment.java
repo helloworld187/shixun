@@ -12,11 +12,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.youth.banner.Banner;
+import com.youth.banner.BannerConfig;
+import com.youth.banner.Transformer;
+import com.youth.banner.listener.OnBannerListener;
 import com.zhangli.test.material_design_application.Adapter.MovieAdapter;
 import com.zhangli.test.material_design_application.Bean.MoviesBean;
 import com.zhangli.test.material_design_application.MovieDetails_Activity;
 import com.zhangli.test.material_design_application.R;
+import com.zhangli.test.material_design_application.ShareActivity;
+import com.zhangli.test.material_design_application.Utils.GlideImageLoader;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -28,18 +35,22 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class StarFragment extends Fragment {
+public class MovieFragment extends Fragment {
     private View view;
     private View movie_items;
     private List<MoviesBean> moviesBeanList = new ArrayList<>();
     private RecyclerView recyclerView;
     private ImageView mv_poster;
 
+    private Banner banner;
+    private List<String> list_title;
+    private List<Object> list  = new ArrayList<>();
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_star,null);
-        sendRequestWithOkHttp("https://api.douban.com/v2/movie/in_theaters?city=%E7%BB%B5%E9%98%B3tart=0&count=10");
+        view = inflater.inflate(R.layout.fragment_movie,null);
+        sendRequestWithOkHttp("http://api.douban.com/v2/movie/top250?apikey=0df993c66c0c636e29ecbb5344252a4a");
         return view;
 
     }
@@ -58,8 +69,8 @@ public class StarFragment extends Fragment {
             }
         });
         recyclerView.setAdapter(adapter);
-
         }
+
 
 
     private void sendRequestWithOkHttp(final String url){
@@ -71,7 +82,7 @@ public class StarFragment extends Fragment {
                     Request request = new Request.Builder().url(url).build();
                     Response response = client.newCall(request).execute();
                     String responseData = response.body().string();
-                    Log.d("StarFragment", "run: "+responseData);
+                    Log.d("MovieFragment", "run: "+responseData);
                     showResponse(responseData);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -112,7 +123,7 @@ public class StarFragment extends Fragment {
 //                        final String weburl = jsonArray.getJSONObject(i).getString("weburl");
 
                         moviesBeanList.add(new MoviesBean(mv_name,mv_garde,mv_type,mv_director,mv_casts,mv_date,mv_poster,mv_details));
-                        Log.d("FocusFragment", "run: "+i+moviesBeanList.toString());
+                        Log.d("NewsFragment", "run: "+i+moviesBeanList.toString());
                     }
                     initView(moviesBeanList);
                 }catch (Exception e){

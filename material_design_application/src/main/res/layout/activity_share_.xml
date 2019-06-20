@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+   <com.youth.banner.Banner
+       xmlns:app="http://schemas.android.com/apk/res-auto"
+       android:id="@+id/banner"
+       android:layout_width="match_parent"
+       android:layout_height="200dp"
+       app:scroll_time="2000"/>
+   <com.zhangli.test.material_design_application.GridView.MyDividerGridView
+       xmlns:android="http://schemas.android.com/apk/res/android"
+       android:id="@+id/gridView"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:horizontalSpacing="0.0dip"
+       android:listSelector="@null"
+       android:numColumns="3"
+       android:scrollbars="none"
+       android:gravity="center"
+       android:stretchMode="columnWidth"
+       android:verticalSpacing="0.0dip">
+
+   </com.zhangli.test.material_design_application.GridView.MyDividerGridView>
+   <Button
+       android:id="@+id/share"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_gravity="center"
+       android:text="分享"
+       android:textSize="20dp"
+       android:layout_marginTop="15dp"
+       android:textColor="#ffffff"
+       android:paddingTop="5dp"
+       android:paddingBottom="5dp"
+       android:paddingLeft="13dp"
+       android:paddingRight="13dp"
+       android:background="@drawable/shape" />
+
+</LinearLayout>

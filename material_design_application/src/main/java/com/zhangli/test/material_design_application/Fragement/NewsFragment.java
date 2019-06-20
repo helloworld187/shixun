@@ -29,7 +29,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class FocusFragment extends Fragment{
+public class NewsFragment extends Fragment{
     private ViewPager viewPager;
     private View news_items;
     private List<View> viewlist = new ArrayList<View>();
@@ -39,7 +39,7 @@ public class FocusFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_focus,null);
+        view = inflater.inflate(R.layout.fragment_news,null);
         sendRequestWithOkHttp("http://api.jisuapi.com/news/get?channel=头条&start=0&num=10&appkey=dc3bd6edb7e4fca7");
         return view;
     }
@@ -47,8 +47,8 @@ public class FocusFragment extends Fragment{
     private void initView(final List<NewsBean> data){
         viewPager = (ViewPager)view.findViewById(R.id.viewpager);
         LayoutInflater inflater = getLayoutInflater();
-        Log.d("FocusFragment", "initView: "+newsList.size());
-        Log.d("FocusFragment", "initView: "+view);
+        Log.d("NewsFragment", "initView: "+newsList.size());
+        Log.d("NewsFragment", "initView: "+view);
         for (int i=0; i<data.size(); i++) {
             news_items = inflater.inflate(R.layout.news_items, null);
             TextView title_tv = news_items.findViewById(R.id.news_title);
@@ -112,7 +112,7 @@ public class FocusFragment extends Fragment{
                             final String weburl = jsonArray.getJSONObject(i).getString("weburl");
 
                             newsList.add(new NewsBean(title,time,src,category,pic,weburl));
-                            Log.d("FocusFragment", "run: "+i+newsList.toString());
+                            Log.d("NewsFragment", "run: "+i+newsList.toString());
                         }
                         initView(newsList);
                     }catch (Exception e){

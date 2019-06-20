@@ -7,20 +7,20 @@
             android:title="我的超级会员"/>
         <item
             android:id="@+id/wallet"
-            android:icon="@drawable/ic_wallet"
+            android:icon="@drawable/ic_photos"
             android:title="我的壁纸"/>
         <item
             android:id="@+id/decorate"
-            android:icon="@drawable/ic_decorate"
+            android:icon="@drawable/ic_apply"
             android:title="我的应用"/>
         <item
             android:id="@+id/collection"
-            android:icon="@drawable/ic_collection"
+            android:icon="@drawable/ic_system"
                 android:title="我的系统"/>
         <item
             android:id="@+id/photos"
-            android:icon="@drawable/ic_photos"
-            android:title="我的相册"/>
+            android:icon="@drawable/ic_share"
+            android:title="我的分享"/>
         <item
             android:id="@+id/file"
             android:icon="@drawable/ic_file"

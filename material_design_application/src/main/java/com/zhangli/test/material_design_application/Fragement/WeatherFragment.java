@@ -10,10 +10,10 @@ import android.view.ViewGroup;
 
 import com.zhangli.test.material_design_application.R;
 
-public class MessageFragment extends Fragment {
+public class WeatherFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragmenr_message,null);
+        return inflater.inflate(R.layout.fragmenr_weather,null);
     }
 }

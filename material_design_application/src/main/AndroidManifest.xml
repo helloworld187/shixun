@@ -8,6 +8,8 @@
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:name="org.litepal.LitePalApplication"
@@ -41,15 +43,14 @@
             android:label="新闻详情" />
         <activity android:name=".WallPaper_Activity" />
         <activity android:name=".Member_Activity" />
-        <activity android:name=".Decorate_Activity" />
         <activity android:name=".MovieDetails_Activity" />
         <activity android:name=".CategoryActivity" />
         <activity android:name=".WeatherActivity" />
 
-        <service
-            android:name=".AutoUpdateService"
-            android:enabled="true"
-            android:exported="true" />
+        <!-- <service -->
+        <!-- android:name=".AutoUpdateService" -->
+        <!-- android:enabled="true" -->
+        <!-- android:exported="true" /> -->
         <service
             android:name=".Service.AutoUpdateService"
             android:enabled="true"
@@ -58,7 +59,17 @@
         <activity android:name=".SystemInfoActivity" />
         <activity android:name=".TestSrceen_Activity" />
         <activity android:name=".AppActivity" />
-        <activity android:name=".SystemActivity"></activity>
+        <activity android:name=".SystemActivity" />
+        <activity android:name=".ShareActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.VIEW" /> -->
+            <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+            <!-- <category android:name="android.intent.category.BROWSABLE" /> -->
+            <!-- &lt;!&ndash;<data android:scheme="tencent你的AppId" />&ndash;&gt; -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity android:name=".MusicDetails_Activity"></activity>
     </application>
 
 </manifest>

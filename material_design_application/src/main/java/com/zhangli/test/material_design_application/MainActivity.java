@@ -2,7 +2,9 @@ package com.zhangli.test.material_design_application;
 
 import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.os.Build;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -25,11 +27,11 @@ import android.widget.Toast;
 import android.widget.TabHost.TabSpec;
 
 import com.zhangli.test.material_design_application.Fragement.DressedFragment;
-import com.zhangli.test.material_design_application.Fragement.FocusFragment;
+import com.zhangli.test.material_design_application.Fragement.MovieFragment;
+import com.zhangli.test.material_design_application.Fragement.NewsFragment;
 import com.zhangli.test.material_design_application.Fragement.MemberFragment;
-import com.zhangli.test.material_design_application.Fragement.MessageFragment;
-import com.zhangli.test.material_design_application.Fragement.PeopleFragment;
-import com.zhangli.test.material_design_application.Fragement.StarFragment;
+import com.zhangli.test.material_design_application.Fragement.WeatherFragment;
+import com.zhangli.test.material_design_application.Fragement.MusicFragment;
 import com.zhangli.test.material_design_application.Fragement.WalletFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -42,13 +44,13 @@ public class MainActivity extends AppCompatActivity {
     private LayoutInflater layoutInflater;
 
     //定义数组来存放Fragment界面
-    private Class fragmentArray[] = {MessageFragment.class, PeopleFragment.class,FocusFragment.class, StarFragment.class};
+    private Class fragmentArray[] = {WeatherFragment.class, MusicFragment.class,NewsFragment.class, MovieFragment.class};
 
     //定义数组来存放导航图标
-    private int mImageViewArray[] = {R.animator.message,R.animator.people,R.animator.focus,R.animator.star};
+    private int mImageViewArray[] = {R.animator.weather,R.animator.music,R.animator.news,R.animator.movie};
 
     //Tab选项卡的文字
-    private String mTextviewArray[] = {"消息", "联系人", "看点","动态"};
+    private String mTextviewArray[] = {"天气", "音乐", "新闻","电影"};
 
     private ColorStateList colorStateList;
 
@@ -60,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
     public Intent intent;
     private ImageView avator;
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    @RequiresApi(api = Build.VERSION_CODES.M)
     private void initView(){
         avator = (ImageView) findViewById(R.id.icon_image);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -128,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                         break;
                     case R.id.photos:
-                        intent = new Intent(MainActivity.this,Decorate_Activity.class);
+                        intent = new Intent(MainActivity.this,ShareActivity.class);
                         startActivity(intent);
                         break;
                     default:
@@ -201,6 +205,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * 给Tab按钮设置图标和文字
      */
+    @RequiresApi(api = Build.VERSION_CODES.M)
     private View getTabItemView(int index){
         View view = layoutInflater.inflate(R.layout.tabhost_item, null);
 
@@ -220,17 +225,15 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.toolbar,menu);
-        return true;
+        getMenuInflater().inflate(R.menu.toolbar, menu);
+        MenuItem menuItem =  menu.findItem(R.id.setting);
+        menuItem.setIcon(R.drawable.menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
-            case R.id.upload:
-                Toast.makeText(this,"upload",Toast.LENGTH_SHORT).show();
-            case R.id.delete:
-                Toast.makeText(this,"delete",Toast.LENGTH_SHORT).show();
             case R.id.setting:
                 Toast.makeText(this,"more",Toast.LENGTH_SHORT).show();
             case android.R.id.home:

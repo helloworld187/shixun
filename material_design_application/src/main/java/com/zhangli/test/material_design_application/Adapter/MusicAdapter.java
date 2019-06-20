@@ -24,6 +24,17 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.ViewHolder> 
         this.context = context;
     }
 
+    public interface OnItemClickListener {
+        void onItemClick(View v,int position);
+    }
+
+    public OnItemClickListener onItemClickListener;
+
+    public void setOnItemClickListener(OnItemClickListener listener){
+        onItemClickListener= listener;
+    }
+
+
     public static class  ViewHolder extends RecyclerView.ViewHolder{
         ImageView album;
         TextView musicname,singer;
@@ -50,6 +61,15 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.ViewHolder> 
         Glide.with(context).load(music.getAlbum()).into(viewHolder.album);
         viewHolder.musicname.setText(music.getMusicName());
         viewHolder.singer.setText(music.getSingerName());
+        final int position = i;
+        if (onItemClickListener != null) {
+            viewHolder.album.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onItemClickListener.onItemClick(v, position);
+                }
+            });
+        }
     }
 
     @Override
